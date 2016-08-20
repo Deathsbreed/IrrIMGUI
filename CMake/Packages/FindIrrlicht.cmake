@@ -7,17 +7,18 @@
 #  IRRLICHT_DEFINITIONS - Compiler switches required for using Irrlicht
 #
 #  Copyright (c) 2006 Andreas Schneider <mail@cynapses.org>
+#  Copyright (c) 2016 Brigham Keys, Esq. <bkeys@gnu.org>
 #
 #  Redistribution and use is allowed according to the terms of the New
-#  BSD license.
+#  GNU GPL v3+
 #  For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
 
 
-if (IRRLICHT_LIBRARIES AND IRRLICHT_INCLUDE_DIRS)
+if (IRRLICHT_LIBRARY AND IRRLICHT_INCLUDE_DIRS)
   # in cache already
   set(IRRLICHT_FOUND TRUE)
-else (IRRLICHT_LIBRARIES AND IRRLICHT_INCLUDE_DIRS)
+else (IRRLICHT_LIBRARY AND IRRLICHT_INCLUDE_DIRS)
 
   find_path(IRRLICHT_INCLUDE_DIR
     NAMES
@@ -50,19 +51,19 @@ else (IRRLICHT_LIBRARIES AND IRRLICHT_INCLUDE_DIRS)
   )
 
   if (IRRLICHT_FOUND)
-    set(IRRLICHT_LIBRARIES
-      ${IRRLICHT_LIBRARIES}
+    set(IRRLICHT_LIBRARY
+      ${IRRLICHT_LIBRARY}
       ${IRRLICHT_LIBRARY}
     )
   endif (IRRLICHT_FOUND)
 
-  if (IRRLICHT_INCLUDE_DIRS AND IRRLICHT_LIBRARIES)
+  if (IRRLICHT_INCLUDE_DIRS AND IRRLICHT_LIBRARY)
      set(IRRLICHT_FOUND TRUE)
-  endif (IRRLICHT_INCLUDE_DIRS AND IRRLICHT_LIBRARIES)
+  endif (IRRLICHT_INCLUDE_DIRS AND IRRLICHT_LIBRARY)
 
   if (IRRLICHT_FOUND)
     if (NOT IRRLICHT_FIND_QUIETLY)
-      message(STATUS "Found Irrlicht: ${IRRLICHT_LIBRARIES}")
+      message(STATUS "Found Irrlicht: ${IRRLICHT_LIBRARY}")
     endif (NOT IRRLICHT_FIND_QUIETLY)
   else (IRRLICHT_FOUND)
     if (IRRLICHT_FIND_REQUIRED)
@@ -70,7 +71,7 @@ else (IRRLICHT_LIBRARIES AND IRRLICHT_INCLUDE_DIRS)
     endif (IRRLICHT_FIND_REQUIRED)
   endif (IRRLICHT_FOUND)
 
-  # show the IRRLICHT_INCLUDE_DIRS and IRRLICHT_LIBRARIES variables only in the advanced view
-  mark_as_advanced(IRRLICHT_INCLUDE_DIRS IRRLICHT_LIBRARIES)
+  # show the IRRLICHT_INCLUDE_DIRS and IRRLICHT_LIBRARY variables only in the advanced view
+  mark_as_advanced(IRRLICHT_INCLUDE_DIRS IRRLICHT_LIBRARY)
 
-endif (IRRLICHT_LIBRARIES AND IRRLICHT_INCLUDE_DIRS)
+endif (IRRLICHT_LIBRARY AND IRRLICHT_INCLUDE_DIRS)

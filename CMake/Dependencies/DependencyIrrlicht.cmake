@@ -1,0 +1,11 @@
+find_package(OpenGL)
+find_package(Irrlicht)
+
+include_directories(
+  SYSTEM ${IRRLICHT_INCLUDE_DIR}
+  )
+
+SET(IRRIMGUI_DEPENDENCY_LIBRARIES
+  ${IRRIMGUI_DEPENDENCY_LIBRARIES}
+  ${IRRLICHT_LIBRARY}
+  )

@@ -60,6 +60,7 @@ INCLUDE(OptionNativeOpenGL)
 INCLUDE(OptionUnitTests)
 
 # Dependency related settings
+INCLUDE(DependencyIrrlicht)
 INCLUDE(DependencyIMGUI)
 INCLUDE(DependencyOpenGL)
 INCLUDE(DependencyDirectX9)
